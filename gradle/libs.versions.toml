@@ -1,6 +1,6 @@
 [versions]
-agp = "8.4.0-rc02"
-kotlin = "1.9.21"
+agp = "8.4.0-alpha09"
+kotlin = "1.9.0"
 coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -8,6 +8,9 @@ espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.9.0"
 composeBom = "2024.04.01"
+ktor = "2.3.4"
+coil = "2.6.0"
+immutable-collections = "0.3.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,9 +27,21 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-ktor = { group = "", name = "" }
+immutable-collections = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "immutable-collections" }
+
+# Ktor
+ktor-client = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-websockets = { module = "io.ktor:ktor-client-websockets", version.ref = "ktor" }
+ktor-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging-jvm", version.ref = "ktor" }
+ktor-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+
+# Coil
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
