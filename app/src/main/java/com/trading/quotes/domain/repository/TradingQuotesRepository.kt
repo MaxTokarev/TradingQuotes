@@ -5,5 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface TradingQuotesRepository {
 
+    fun insert(quotes: TradingQuotes)
     fun observeQuotes(): Flow<TradingQuotes>
 }
